@@ -14,93 +14,63 @@ namespace CanTriangleExist.Tests
         Triangle ex = new Triangle();
 
         [TestMethod()]
-        public void Sides5_5_10_returnedTrue()
+        public void A_is_null()
         {
-            bool expected = true;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(5, 5, 9), expected);
+            Assert.IsFalse(ex.CanTriangleExist(0, 5, 9));
         }
 
         [TestMethod()]
-        public void Sides3_4_5_returnedTrue()
+        public void EgyptianTriangle()
         {
-            bool expected = true;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(3, 4, 5), expected);
+            Assert.IsTrue(ex.CanTriangleExist(3, 4, 5));
         }
 
         [TestMethod()]
-        public void Sides1_2_2_returnedTrue()
+        public void C_is_null()
         {
-            bool expected = true;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(1, 2, 2), expected);
+            Assert.IsFalse(ex.CanTriangleExist(1, 2, 0));
         }
 
         [TestMethod()]
-        public void Sides3_4_9_returnedFalse()
+        public void A_is_negative()
         {
-            bool expected = false;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(3, 4, 9), expected);
+            Assert.IsFalse(ex.CanTriangleExist(-3, 4, 9));
         }
 
         [TestMethod()]
-        public void Sides12_0_5_returnedFalse()
+        public void B_is_null()
         {
-            bool expected = false;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(12, 0, 5), expected);
+            Assert.IsFalse(ex.CanTriangleExist(12, 0, 5));
         }
 
         [TestMethod()]
-        public void Sides120_70_80_returnedTrue()
+        public void A_is_huge()
         {
-            bool expected = true;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(120, 70, 80), expected);
+            Assert.IsFalse(ex.CanTriangleExist(1000, 70, 80));
         }
 
         [TestMethod()]
-        public void Sides6_minus10_0_returnedFalse()
+        public void B_is_negative()
         {
-            bool expected = false;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(6, -10, 0), expected);
+            Assert.IsFalse(ex.CanTriangleExist(6, -10, 0));
         }
 
         [TestMethod()]
-        public void Sides5_5_minus3_returnedFalse()
+        public void C_is_negative()
         {
-            bool expected = false;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(5, 5, -3), expected);
+            Assert.IsFalse(ex.CanTriangleExist(5, 5, -3));
         }
 
         [TestMethod()]
-        public void Sides6_8_10_returnedTrue()
+        public void C_is_huge()
         {
-            bool expected = true;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(6, 8, 10), expected);
+            Assert.IsFalse(ex.CanTriangleExist(6, 8, 1000));
         }
 
         [TestMethod()]
-        public void Sides1_2_3_returnedFalse()
+        public void B_is_huge()
         {
-            bool expected = false;
-
-            //Assert
-            Assert.AreEqual(ex.CanTriangleExist(1, 2, 3), expected);
+            Assert.IsFalse(ex.CanTriangleExist(1, 1000, 3));
         }
     }
 }

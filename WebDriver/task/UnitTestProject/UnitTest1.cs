@@ -50,7 +50,6 @@ namespace UnitTestProject
             el = driver.FindElement(By.ClassName("j-station_input_to"));
             sendkeys(el, "Санкт-Петербург");
 
-            //driver.FindElement(By.ClassName("j-date_to")).SendKeys("20.02.2019");
             driver.FindElement(By.ClassName("m-border_inner")).Click();
             Assert.AreEqual("ж/д", driver.FindElement(By.ClassName("t-nowrap")).Text);
             driver.Quit();

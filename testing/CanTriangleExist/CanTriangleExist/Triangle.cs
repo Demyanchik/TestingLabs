@@ -8,23 +8,9 @@ namespace TriangleLib
 {
     public class Triangle
     {
-        public bool CanTriangleExist(double a, double b, double c)
+        public bool CanTriangleExist(double A_Side, double B_Side, double C_Side)
         {
-            if (a <= 0)
-                return false;
-            if (b <= 0)
-                return false;
-            if (c <= 0)
-                return false;
-            if (a + b <= c)
-                return false;
-            if (a + c <= b)
-                return false;
-            if (b + c <= a)
-                return false;
-            
-
-            return true;
+            return (A_Side >= 0 && B_Side >= 0 && C_Side >= 0 && (A_Side + B_Side > C_Side && B_Side + C_Side > A_Side && A_Side + C_Side > B_Side));
         }
     }
 }

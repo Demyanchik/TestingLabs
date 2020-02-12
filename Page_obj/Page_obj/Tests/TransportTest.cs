@@ -20,18 +20,18 @@ namespace Page_obj
             Browser.Navigate().GoToUrl("https://www.tutu.ru/");
             HomePage homePage = new HomePage(Browser).InpuntInformation("Гродно","","30.11.2019");
             Assert.AreEqual("Пожалуйста, укажите название станции",homePage.GetError());
-           Browser.Quit();
+            Browser.Quit();
         }
         [TestMethod]
         public void TestNumberOfPeople()
         {
             IWebDriver Browser = new ChromeDriver();
             Browser.Navigate().GoToUrl("https://www.tutu.ru/");
-            HomePage homePage = new HomePage(Browser).InpuntInformation("Санкт-Петербург", "Москва", "30.11.2019");
+            HomePage homePage = new HomePage(Browser).InpuntInformation("Санкт-Петербург", "Москва", "20.02.2020");
             Trains trains = new Trains(Browser).Takefirst();
             ChangeWindow(Browser);
             TakePlace takePlace = new TakePlace(Browser).ChoosePlace();
-            Assert.AreEqual("Вы не выбрали ни одного пассажира", homePage.GetError());
+            Assert.AreEqual("Вы не выбрали ни одного пассажира", takePlace.GetError());
             Browser.Quit();
         }
         

@@ -26,11 +26,24 @@ namespace Page_obj.Pages
 
             PageFactory.InitElements(Browser, this);
         }
-        
+
+        private void sendkeys(IWebElement ele, String val)
+        {
+            while (true)
+            {
+                ele.Clear();
+                ele.SendKeys(val);
+                if (ele.GetAttribute("value").Equals(val))
+                    break;
+
+            }
+
+        }
+
         public HomePage InpuntInformation(string StationFrom,string StationTo,string date)
         {
-            Station_from.SendKeys(StationFrom);
-            Station_to.SendKeys(StationTo);
+            sendkeys(Station_from, StationFrom);
+            sendkeys(Station_to, StationTo);
             Date.SendKeys(date);
             Date.Click();
             Find.Click();
